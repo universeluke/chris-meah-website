@@ -1,0 +1,73 @@
+/* LLM Navbar Styles */
+.llm-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 200px;
+  pointer-events: none;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-right: 20px;
+}
+
+.llm-navbar-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.llm-navbar-node {
+  position: absolute;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.llm-navbar-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: #e5e7eb; /* gray-200 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.llm-navbar-button:hover {
+  background-color: #93c5fd; /* blue-300 */
+  scale: 2.5;
+}
+
+.llm-navbar-button.active {
+  background-color: #3b82f6; /* blue-500 */
+  color: white;
+  transform: scale(1.1);
+}
+
+.llm-navbar-number {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.llm-navbar-label {
+  position: absolute;
+  right: 56px;
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.llm-navbar-button:hover .llm-navbar-label {
+  opacity: 1;
+}
