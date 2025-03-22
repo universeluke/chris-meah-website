@@ -23,6 +23,15 @@
   position: absolute;
   pointer-events: auto;
   z-index: 10;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease-out,
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.llm-navbar-node.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .llm-navbar-button {
@@ -37,15 +46,16 @@
   background-color: #e5e7eb; /* gray-200 */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
 .llm-navbar-button:hover {
-  background-color: #93c5fd; /* blue-300 */
-  scale: 2.5;
+  background-color: #a1dda2; /* blue-300 */
+  scale: 2;
 }
 
 .llm-navbar-button.active {
-  background-color: #3b82f6; /* blue-500 */
+  background-color: #a1dda2; /* blue-500 */
   color: white;
   transform: scale(1.1);
 }
@@ -53,12 +63,13 @@
 .llm-navbar-number {
   font-size: 0.75rem;
   font-weight: bold;
+  font-family: "Helvetica", sans-serif;
 }
 
 .llm-navbar-label {
   position: absolute;
   right: 56px;
-  background-color: #1f2937; /* gray-800 */
+  background-color: #1c1c1c; /* gray-800 */
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
@@ -66,8 +77,22 @@
   transition: opacity 0.2s ease;
   white-space: nowrap;
   pointer-events: none;
+  font-family: "Helvetica", sans-serif;
 }
 
 .llm-navbar-button:hover .llm-navbar-label {
   opacity: 1;
+}
+
+/* SVG Line Animation */
+.llm-navbar-line {
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: opacity 0.5s ease-in-out, stroke-dashoffset 1.5s ease-in-out;
+}
+
+.llm-navbar-line.visible {
+  opacity: 1;
+  stroke-dashoffset: 0;
 }

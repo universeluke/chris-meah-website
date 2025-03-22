@@ -9,18 +9,23 @@ interface MenuItem {
 const LLMNavbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [nodePositions, setNodePositions] = useState<number[]>([]);
+  const [visibleNodes, setVisibleNodes] = useState<number[]>([]);
+  const [showLines, setShowLines] = useState(false);
 
-  // Menu items for your navbar - 7 sections
-  const menuItems: MenuItem[] = [
-    { id: "section1", label: "Home" },
-    { id: "section2", label: "About" },
-    { id: "section3", label: "Services" },
-    { id: "section4", label: "Projects" },
-    { id: "section5", label: "Portfolio" },
-    { id: "section6", label: "Team" },
-    { id: "section7", label: "Contact" },
-  ];
+  const menuItems: MenuItem[] = React.useMemo(
+    () => [
+      { id: "section1", label: "Home" },
+      { id: "section2", label: "About" },
+      { id: "section3", label: "Building" },
+      { id: "section4", label: "Training" },
+      { id: "section5", label: "Speaking" },
+      { id: "section6", label: "Services" },
+      { id: "section7", label: "Contact" },
+    ],
+    []
+  );
 
+  // claude does a lot of heavy lifting here, thank you claude
   // Generate random positions on mount
   useEffect(() => {
     // Generate random positions with a wider range (20-180px from right edge)
@@ -28,7 +33,34 @@ const LLMNavbar: React.FC = () => {
       return Math.floor(Math.random() * 160) + 20; // Random between 20-180px
     });
     setNodePositions(positions);
-  }, []);
+
+    // Create random order for nodes to appear
+    const nodeIndices = Array.from({ length: menuItems.length }, (_, i) => i);
+    const shuffledIndices = shuffleArray([...nodeIndices]);
+
+    // Animate nodes appearing one by one
+    shuffledIndices.forEach((nodeIndex, i) => {
+      setTimeout(() => {
+        setVisibleNodes((prev) => [...prev, nodeIndex]);
+
+        // After the last node appears, show the lines
+        if (i === shuffledIndices.length - 1) {
+          setTimeout(() => {
+            setShowLines(true);
+          }, 300); // Delay before showing lines
+        }
+      }, i * 200); // 200ms delay between each node
+    });
+  }, [menuItems]);
+
+  // Shuffle array function (Fisher-Yates algorithm)
+  const shuffleArray = (array: number[]): number[] => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
 
   // Handle scroll to section
   const scrollToSection = (id: string) => {
@@ -39,34 +71,41 @@ const LLMNavbar: React.FC = () => {
     }
   };
 
+  // Updated function to determine which section is in the viewport
+  const isElementInViewport = (el: Element): boolean => {
+    const rect = el.getBoundingClientRect();
+    // Consider the element in viewport if at least 50% of it is visible
+    return (
+      rect.top <= window.innerHeight / 2 &&
+      rect.bottom >= window.innerHeight / 2
+    );
+  };
+
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
+      // Check if we're at the top of the page (special case for "Home")
+      if (window.scrollY === 0) {
+        setActiveSection("section1");
+        return;
+      }
 
-      // Calculate the percentage of the page that has been scrolled
-      const scrollPercentage = scrollPosition / (documentHeight - windowHeight);
-
-      // Determine the active section based on scroll percentage
-      const sectionIndex = Math.min(
-        Math.floor(scrollPercentage * menuItems.length),
-        menuItems.length - 1
-      );
-
-      const currentSectionId = menuItems[sectionIndex]?.id;
-
-      if (currentSectionId !== activeSection) {
-        setActiveSection(currentSectionId);
+      // Find which section is currently most visible in the viewport
+      for (const item of menuItems) {
+        const element = document.getElementById(item.id);
+        if (element && isElementInViewport(element)) {
+          setActiveSection(item.id);
+          break;
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once on mount
+    // Call once on mount to set initial active section
+    setTimeout(handleScroll, 100);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [activeSection, menuItems]);
+  }, [menuItems]);
 
   return (
     <div className="llm-navbar">
@@ -99,8 +138,9 @@ const LLMNavbar: React.FC = () => {
                 y1={`${startYPercent * 100}%`}
                 x2={endX}
                 y2={`${endYPercent * 100}%`}
-                stroke="#94A3B8" // slate-400 (darker for better visibility)
+                stroke="#000000"
                 strokeWidth="2"
+                className={`llm-navbar-line ${showLines ? "visible" : ""}`}
               />
             );
           })}
@@ -110,11 +150,12 @@ const LLMNavbar: React.FC = () => {
       {menuItems.map((item, index) => {
         const rightPos = nodePositions[index] || 40;
         const topPercent = index / (menuItems.length - 1);
+        const isVisible = visibleNodes.includes(index);
 
         return (
           <div
             key={item.id}
-            className="llm-navbar-node"
+            className={`llm-navbar-node ${isVisible ? "visible" : ""}`}
             style={{
               top: `calc(${topPercent * 100}% - 24px)`, // center vertically (24px = half of node height)
               right: `${rightPos}px`,

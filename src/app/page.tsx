@@ -1,9 +1,9 @@
-// using use client for page.tsx is so dumb, might aswell have not used nextjs :)))
 "use client";
 
 import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import LLMNavbar from "./components/LLMNavbar";
+import Header from "./components/Header";
 
 export default function Home() {
   const [showChatbox, setShowChatbox] = useState(false);
@@ -41,17 +41,15 @@ export default function Home() {
         } else {
           clearInterval(typeInterval);
 
-          // After typing finishes, wait a bit then fade away
           setTimeout(() => {
             setShowChatbox(false);
 
-            // After fade animation completes, mark animation as done
             setTimeout(() => {
               setAnimationComplete(true);
-            }, 1000); // Matches the fade-out duration
+            }, 1000);
           }, 1500);
         }
-      }, 50); // Speed of typing
+      }, 50);
 
       return () => clearInterval(typeInterval);
     } else {
@@ -100,6 +98,34 @@ export default function Home() {
   // actual app page
   return (
     <div>
+      <section id="section1">
+        <Header />
+      </section>
+
+      <section id="section2">
+        <h2>About</h2>
+      </section>
+
+      <section id="section3">
+        <h2>Building</h2>
+      </section>
+
+      <section id="section4">
+        <h2>Training</h2>
+      </section>
+
+      <section id="section5">
+        <h2>Speaking</h2>
+      </section>
+
+      <section id="section6">
+        <h2>Services</h2>
+      </section>
+
+      <section id="section7">
+        <h2>Contact</h2>
+      </section>
+
       <LLMNavbar />
     </div>
   );
