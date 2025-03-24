@@ -25,7 +25,7 @@ export default function Header() {
   }, []);
 
   const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
-  const subtitleTransform = `translateY(${scrollPosition * 0.63}px)`;
+  const subtitleTransform = `translateY(${scrollPosition * 0.64}px)`;
 
   return (
     <div className="header-section">
@@ -41,7 +41,7 @@ export default function Header() {
           transform: isVisible ? subtitleTransform : "translateY(-30px)",
         }}
       >
-        the AI Genius Extraodinaire
+        the AI Genius Extraordinaire
       </h2>
     </div>
   );

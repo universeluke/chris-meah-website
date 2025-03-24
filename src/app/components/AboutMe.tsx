@@ -99,7 +99,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
 
   const titleParallax = {
     transform: isVisible
-      ? `translateY(${scrollPosition * 0.4 - 90}px)`
+      ? `translateY(${scrollPosition * 0.5 - 120}px)`
       : "translateY(20px)",
     opacity: calculateTitleOpacity(),
   };
