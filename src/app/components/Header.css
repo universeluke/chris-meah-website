@@ -26,7 +26,7 @@
   transition: opacity 0.8s ease-out,
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   margin: 0;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .name-title.visible {
@@ -36,7 +36,8 @@
 
 .name-subtitle {
   font-family: "Helvetica", sans-serif;
-  font-size: 3vw;
+  color: black;
+  font-size: calc(2vw + 2em);
   width: 78.5vw;
   opacity: 0;
   transform: translateY(-30px);

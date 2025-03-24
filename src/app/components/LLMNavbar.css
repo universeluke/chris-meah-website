@@ -31,7 +31,7 @@
 
 .llm-navbar-node.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1.5);
 }
 
 .llm-navbar-button {
@@ -51,13 +51,13 @@
 
 .llm-navbar-button:hover {
   background-color: #a1dda2; /* blue-300 */
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 .llm-navbar-button.active {
   background-color: #a1dda2; /* blue-500 */
   color: white;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 .llm-navbar-number {

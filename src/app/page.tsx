@@ -105,14 +105,13 @@ export default function Home() {
       {/* pass the info in as props, might be easier to see what to change later */}
       <section id="section2">
         <AboutMe
-          title="About Me"
           imageUrl="/chris.jpeg"
-          altText="John Doe"
-          bioText={`I'm Chris, an engineer who specialises in building, training, and speaking about AI.
-        
-        10 years ago, I founded the School of Code to teach people how to learn to code. Since then I've shifted to building and teaching people about my PhD: Artificial Intelligence.
-        
-        When I'm not teaching, building, or training AI, you can find me solving other mysteries of the universe (like why aren't people more passionate about good sandwiches, and has everyone noticed my beard yet?)`}
+          altText="Chris Meah"
+          //   bioText={`I'm Chris, an engineer who specialises in building, training, and speaking about AI.
+
+          // 10 years ago, I founded the School of Code to teach people how to learn to code. Since then I've shifted to building and teaching people about my PhD: Artificial Intelligence.
+
+          // When I'm not teaching, building, or training AI, you can find me solving other mysteries of the universe (like why aren't people more passionate about good sandwiches, and has everyone noticed my beard yet?)`}
         />
       </section>
 
