@@ -14,9 +14,12 @@
   padding-left: 20px;
 }
 
+/* THE MOST USEFUL FONTSIZE TRICK I'VE EVER SEEN */
+/* https://www.stefanjudis.com/today-i-learned/viewport-units-for-font-sizes-destroy-zooming/ */
+
 .name-title {
   font-family: "Helvetica", sans-serif;
-  font-size: 15vw;
+  font-size: calc(7vw + 7em);
   width: 78.5vw;
   opacity: 0;
   transform: translateY(30px);
