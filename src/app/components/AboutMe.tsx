@@ -84,7 +84,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
     const rect = sectionRef.current?.getBoundingClientRect();
     if (!rect) return 1;
 
-    const titlePosition = rect.top + 550; // wiggle the + 400 to adjust where the title fade will be
+    const titlePosition = rect.top + 300; // wiggle the + 400 to adjust where the title fade will be
 
     if (titlePosition < fadeZone) {
       return titlePosition / fadeZone;
@@ -121,13 +121,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             }`}
           >
             <div className="profile-image-container">
-              {imageUrl ? (
-                <img src={imageUrl} alt={altText} className="profile-image" />
-              ) : (
-                <div className="profile-image-placeholder">
-                  <span>Your Photo</span>
-                </div>
-              )}
+              <img src={imageUrl} alt={altText} className="profile-image" />
+
               <div className="profile-image-border">
                 <svg
                   className="circle-svg"
@@ -144,6 +139,38 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                     strokeWidth="2"
                   />
                 </svg>
+              </div>
+            </div>
+
+            <div className="svg-connector">
+              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
+                <line
+                  className="connector-line"
+                  x1="1"
+                  y1="0"
+                  x2="1"
+                  y2="140"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+
+            <div className="info-circle-container">
+              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  className="info-circle"
+                  cx="150"
+                  cy="150"
+                  r="140"
+                  fill="#f5f5f5"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+              <div className="info-text">
+                <p>chris</p>
+                <p>batman</p>
               </div>
             </div>
           </div>
@@ -154,17 +181,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             }`}
           >
             <div className="profile-image-container">
-              {imageUrl ? (
-                <img
-                  src={"/soc.png"}
-                  alt="soc image"
-                  className="profile-image"
-                />
-              ) : (
-                <div className="profile-image-placeholder">
-                  <span>Your Photo</span>
-                </div>
-              )}
+              <img src={"/soc.png"} alt="soc image" className="profile-image" />
+
               <div className="profile-image-border">
                 <svg
                   className="circle-svg"
@@ -183,6 +201,38 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                 </svg>
               </div>
             </div>
+
+            <div className="svg-connector">
+              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
+                <line
+                  className="connector-line"
+                  x1="1"
+                  y1="0"
+                  x2="1"
+                  y2="140"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+
+            <div className="info-circle-container">
+              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  className="info-circle"
+                  cx="150"
+                  cy="150"
+                  r="140"
+                  fill="#f5f5f5"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+              <div className="info-text">
+                <p>school</p>
+                <p>of rock!</p>
+              </div>
+            </div>
           </div>
 
           <div
@@ -191,24 +241,19 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             }`}
           >
             <div className="profile-video-container">
-              {imageUrl ? (
-                <div className="video-wrapper">
-                  <video
-                    className="header-video"
-                    autoPlay
-                    loop
-                    muted
-                    width="400"
-                    height="400"
-                  >
-                    <source src="/christalks.mp4"></source>
-                  </video>
-                </div>
-              ) : (
-                <div className="profile-image-placeholder">
-                  <span>Your Photo</span>
-                </div>
-              )}
+              <div className="video-wrapper">
+                <video
+                  className="header-video"
+                  autoPlay
+                  loop
+                  muted
+                  width="400"
+                  height="400"
+                >
+                  <source src="/christalks.mp4"></source>
+                </video>
+              </div>
+
               <div className="profile-image-border">
                 <svg
                   className="circle-svg"
@@ -225,6 +270,38 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                     strokeWidth="2"
                   />
                 </svg>
+              </div>
+            </div>
+
+            <div className="svg-connector">
+              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
+                <line
+                  className="connector-line"
+                  x1="1"
+                  y1="0"
+                  x2="1"
+                  y2="140"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+
+            <div className="info-circle-container">
+              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  className="info-circle"
+                  cx="150"
+                  cy="150"
+                  r="140"
+                  fill="#f5f5f5"
+                  stroke="#000000"
+                  strokeWidth="2"
+                />
+              </svg>
+              <div className="info-text">
+                <p>talkin</p>
+                <p>and chattin</p>
               </div>
             </div>
           </div>
