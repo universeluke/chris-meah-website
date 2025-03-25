@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import LLMNavbar from "./components/LLMNavbar";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
+import Menu from "./components/Menu";
 
 export default function Home() {
   const [showChatbox, setShowChatbox] = useState(false);
@@ -136,6 +137,7 @@ export default function Home() {
       </section>
 
       <LLMNavbar />
+      <Menu />
     </div>
   );
 }

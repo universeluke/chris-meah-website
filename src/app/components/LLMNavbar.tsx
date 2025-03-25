@@ -30,7 +30,7 @@ const LLMNavbar: React.FC = () => {
   useEffect(() => {
     // Generate random positions with a wider range (20-180px from right edge)
     const positions = menuItems.map(() => {
-      return Math.floor(Math.random() * 220) + 20; // Random between 20-180px
+      return Math.floor(Math.random() * 140) + 20; // Random between 20-180px
     });
     setNodePositions(positions);
 

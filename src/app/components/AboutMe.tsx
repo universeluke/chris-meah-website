@@ -150,7 +150,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   y1="0"
                   x2="1"
                   y2="140"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>
@@ -164,7 +164,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   cy="150"
                   r="140"
                   fill="#f5f5f5"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>
@@ -210,7 +210,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   y1="0"
                   x2="1"
                   y2="140"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>
@@ -224,7 +224,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   cy="150"
                   r="140"
                   fill="#f5f5f5"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>
@@ -281,7 +281,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   y1="0"
                   x2="1"
                   y2="140"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>
@@ -295,7 +295,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                   cy="150"
                   r="140"
                   fill="#f5f5f5"
-                  stroke="#000000"
+                  stroke="#444444"
                   strokeWidth="2"
                 />
               </svg>

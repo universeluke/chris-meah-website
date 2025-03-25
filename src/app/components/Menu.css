@@ -1,24 +1,62 @@
-.llm-navbar {
+.menu-container {
   position: fixed;
-  top: 0;
+  left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 40px;
   z-index: 50;
-  width: 200px;
+  height: 100px;
   pointer-events: none;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  margin-right: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.llm-navbar-svg {
+.menu-container.active {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.llm-navbar-node {
+.menu-main-button-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.menu-main-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f2f2f;
+  color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.menu-main-button:hover {
+  transform: scale(1.1);
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-node {
   position: absolute;
   pointer-events: auto;
   z-index: 10;
@@ -28,12 +66,12 @@
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.llm-navbar-node.visible {
+.menu-node.visible {
   opacity: 1;
-  transform: scale(1.5);
+  transform: scale(1);
 }
 
-.llm-navbar-button {
+.menu-button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -43,35 +81,27 @@
   transition: all 0.3s ease;
   position: relative;
   background-color: #e5e7eb;
-  border: none;
-  cursor: pointer;
-  scale: 0.8;
   box-shadow: 0px 0px 5px #999999;
+  cursor: pointer;
+  border: none;
 }
 
-.llm-navbar-button:hover {
+.menu-button:hover {
   background-color: #2f2f2f;
   color: white;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
-.llm-navbar-button.active {
-  background-color: #2f2f2f;
-  color: white;
-  transform: scale(1.3);
-}
-
-.llm-navbar-number {
+.menu-number {
   font-size: 0.75rem;
   font-weight: bold;
   font-family: "Helvetica", sans-serif;
 }
 
-.llm-navbar-label {
+.menu-label {
   position: absolute;
-  right: 56px;
-  /* needs to be a bit lighter than the other greys in order to match visually */
-  background-color: #323232;
+  bottom: 56px;
+  background-color: #1c1c1c;
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
@@ -82,19 +112,18 @@
   font-family: "Helvetica", sans-serif;
 }
 
-.llm-navbar-button:hover .llm-navbar-label {
+.menu-button:hover .menu-label {
   opacity: 1;
 }
 
-/* SVG Line Animation */
-.llm-navbar-line {
+.menu-line {
   opacity: 0;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   transition: opacity 0.5s ease-in-out, stroke-dashoffset 1.5s ease-in-out;
 }
 
-.llm-navbar-line.visible {
+.menu-line.visible {
   opacity: 1;
   stroke-dashoffset: 0;
 }
