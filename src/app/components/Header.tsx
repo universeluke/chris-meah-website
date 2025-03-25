@@ -48,7 +48,7 @@ export default function Header() {
         className={`name-title ${isVisible ? "visible" : ""}`}
         style={{ transform: isVisible ? titleTransform : "translateY(30px)" }}
       >
-        Chris Meah
+        Chris[Meah]
       </h1>
       <h2
         className={`name-subtitle ${isVisible ? "visible" : ""}`}
