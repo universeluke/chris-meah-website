@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./PageHeaders.css";
 
-export default function PageHeaders() {
+interface PageHeadersProps {
+  mainTitle: string;
+  subTitle: string;
+}
+
+export default function PageHeaders({ mainTitle, subTitle }: PageHeadersProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -35,8 +40,8 @@ export default function PageHeaders() {
         className={`pageheader-title ${isVisible ? "visible" : ""}`}
         style={{ transform: isVisible ? titleTransform : "translateY(30px)" }}
       >
-        <h1>Consulting</h1>
-        <h2 className="pageheader-subtitle">Bespoke, practical, tailored</h2>
+        <h1>{mainTitle}</h1>
+        <h2 className="pageheader-subtitle">{subTitle}</h2>
       </div>
     </div>
   );

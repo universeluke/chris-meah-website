@@ -8,7 +8,10 @@ import PageHeaders from "../components/PageHeaders";
 export default function Consulting() {
   return (
     <>
-      <PageHeaders />
+      <PageHeaders
+        mainTitle="Consulting"
+        subTitle="Bespoke, practical, tailored"
+      />
       <LLMNavbar
         menuItems={[
           { id: "section1", label: "one bit" },
