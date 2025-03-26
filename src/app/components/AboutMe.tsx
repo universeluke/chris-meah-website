@@ -77,14 +77,14 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
 
     const viewportHeight = window.innerHeight;
 
-    // fade zones - top 30% and bottom 30% of viewport will have fade effect
-    const fadeZone = viewportHeight * 0.3;
+    // fade zones - top 50% and bottom 50% of viewport will have fade effect
+    const fadeZone = viewportHeight * 0.5;
 
     // where the element is compared to the viewport
     const rect = sectionRef.current?.getBoundingClientRect();
     if (!rect) return 1;
 
-    const titlePosition = rect.top + 300; // wiggle the + 400 to adjust where the title fade will be
+    const titlePosition = rect.top + 500; // wiggle the + 400 to adjust where the title fade will be
 
     if (titlePosition < fadeZone) {
       return titlePosition / fadeZone;
@@ -99,7 +99,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
 
   const titleParallax = {
     transform: isVisible
-      ? `translateY(${scrollPosition * 0.5 - 100}px)`
+      ? `translateY(${scrollPosition * 0.5 - 120}px)`
       : "translateY(20px)",
     opacity: calculateTitleOpacity(),
   };

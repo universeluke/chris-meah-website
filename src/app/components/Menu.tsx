@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Menu.css";
+import Link from "next/link";
 
 interface MenuItem {
   id: string;
   label: string;
+  href: string;
 }
 
 const Menu: React.FC = () => {
@@ -14,11 +16,11 @@ const Menu: React.FC = () => {
 
   const menuItems: MenuItem[] = React.useMemo(
     () => [
-      { id: "menu1", label: "Home" },
-      { id: "menu2", label: "About" },
-      { id: "menu3", label: "Projects" },
-      { id: "menu4", label: "Blog" },
-      { id: "menu5", label: "Contact" },
+      { id: "menu1", label: "Home", href: "/" },
+      { id: "menu2", label: "Consulting", href: "/consulting" },
+      { id: "menu3", label: "Public Speaking", href: "/public_speaking" },
+      { id: "menu4", label: "Testimonials", href: "/testimonials" },
+      { id: "menu5", label: "Bookings", href: "/bookings" },
     ],
     []
   );
@@ -89,8 +91,8 @@ const Menu: React.FC = () => {
               menuItems.map((_, index) => {
                 if (index >= menuItems.length - 1) return null;
 
-                const startY = nodePositions[index] - 45 || 0; // -45px to raise it higher than the burger menu button
-                const endY = nodePositions[index + 1] - 45 || 0; // -45px to raise it higher than the burger menu button
+                const startY = nodePositions[index] - 60 || 0; // -60px to raise it higher than the burger menu button
+                const endY = nodePositions[index + 1] - 60 || 0; // -60px to raise it higher than the burger menu button
 
                 // same as before, calulate centre of nodes
                 const centreOfNodesOffset = 24;
@@ -115,7 +117,7 @@ const Menu: React.FC = () => {
           </svg>
 
           {menuItems.map((item, index) => {
-            const itemYPos = nodePositions[index] - 45 || 0; // -45px to raise it higher than the burger menu button
+            const itemYPos = nodePositions[index] - 60 || 0; // -60px to raise it higher than the burger menu button
             const itemXPercent = (index + 0.5) / menuItems.length; // same here, it's +0.5 instead of +1
             const isVisible = visibleNodes.includes(index);
 
@@ -128,12 +130,16 @@ const Menu: React.FC = () => {
                   top: `${itemYPos}px`,
                 }}
               >
-                {/* ill make this a button for now, although it's useless */}
-                <button className="menu-button" aria-label={item.label}>
+                {/* NEXTJS APP ROUTER TO NAV TO THE DIFFERENT PAGES */}
+                <Link
+                  className="menu-button"
+                  aria-label={item.label}
+                  href={item.href}
+                >
                   <span className="menu-number">{index + 1}</span>
 
                   <span className="menu-label">{item.label}</span>
-                </button>
+                </Link>
               </div>
             );
           })}

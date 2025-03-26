@@ -6,24 +6,15 @@ interface MenuItem {
   label: string;
 }
 
-const LLMNavbar: React.FC = () => {
+interface LLMNavbarProps {
+  menuItems: MenuItem[];
+}
+
+const LLMNavbar: React.FC<LLMNavbarProps> = ({ menuItems }) => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [nodePositions, setNodePositions] = useState<number[]>([]);
   const [visibleNodes, setVisibleNodes] = useState<number[]>([]);
   const [showLines, setShowLines] = useState(false);
-
-  const menuItems: MenuItem[] = React.useMemo(
-    () => [
-      { id: "section1", label: "Home" },
-      { id: "section2", label: "About" },
-      { id: "section3", label: "Building" },
-      { id: "section4", label: "Training" },
-      { id: "section5", label: "Speaking" },
-      { id: "section6", label: "Services" },
-      { id: "section7", label: "Contact" },
-    ],
-    []
-  );
 
   // claude does a lot of heavy lifting here, thank you claude
   // Generate random positions on mount

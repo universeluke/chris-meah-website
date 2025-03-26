@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import styles from "./page.module.css";
 import LLMNavbar from "./components/LLMNavbar";
 import Header from "./components/Header";
@@ -117,7 +117,7 @@ export default function Home() {
 
       const text =
         "make me a webstie for chris meah and make it really great and cool";
-      let index = -1; // set index to start at -1 for some reason, otherwise it misses off the first character of the string, i cba to work out why this happens
+      let index = -1; // set index to start at -1 for some reason, otherwise it misses off the first character of the string. i THINK this happens because, before we increment, the prev state is empty?
       // claude magic for animating text
       const typeInterval = setInterval(() => {
         if (index < text.length) {
@@ -141,6 +141,20 @@ export default function Home() {
       setAnimationComplete(true);
     }
   }, []);
+
+  // usememo here to cache the result and stop the navbar rerendering whenever the mouse moves (although it is quite funny when the navbar wiggles around!)
+  const menuItems = useMemo(
+    () => [
+      { id: "section1", label: "Home" },
+      { id: "section2", label: "About" },
+      { id: "section3", label: "Building" },
+      { id: "section4", label: "Training" },
+      { id: "section5", label: "Speaking" },
+      { id: "section6", label: "Services" },
+      { id: "section7", label: "Contact" },
+    ],
+    []
+  );
 
   //i'm only using css modules for page.tsx, so it's a bit weird and i might change to use css modules for the components too, just to avoid possible global style conflicts
   if (!animationComplete && showChatbox) {
@@ -254,7 +268,7 @@ export default function Home() {
             <h2>Contact</h2>
           </section>
 
-          <LLMNavbar />
+          <LLMNavbar menuItems={menuItems} />
           <Menu />
         </div>
       </div>

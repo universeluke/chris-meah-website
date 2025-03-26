@@ -5,7 +5,7 @@
   font-style: normal;
 }
 
-.header-section {
+.pageheader-section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,9 +17,9 @@
 /* THE MOST USEFUL FONTSIZE TRICK I'VE EVER SEEN */
 /* https://www.stefanjudis.com/today-i-learned/viewport-units-for-font-sizes-destroy-zooming/ */
 
-.name-title {
+.pageheader-title {
   font-family: "Helvetica", sans-serif;
-  font-size: 14rem;
+  font-size: 8rem;
   width: 78.5vw;
   opacity: 0;
   transform: translateY(30px);
@@ -30,25 +30,12 @@
   color: #1e1e1e;
 }
 
-.name-title.visible {
+.pageheader-title.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.name-subtitle {
-  font-family: "Helvetica", sans-serif;
+.pageheader-subtitle {
+  font-size: 5rem;
   color: #2b359f;
-  font-size: calc(5rem);
-  width: 78.5vw;
-  opacity: 0;
-  transform: translateY(-30px);
-  transition: opacity 0.8s ease-out,
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  margin: 0;
-  padding-left: 20px;
-}
-
-.name-subtitle.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
