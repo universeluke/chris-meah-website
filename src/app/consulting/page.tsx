@@ -4,14 +4,20 @@
 import Menu from "../components/Menu";
 import LLMNavbar from "../components/LLMNavbar";
 import PageHeaders from "../components/PageHeaders";
+import ConsultingHero from "../components/ConsultingHero";
 
 export default function Consulting() {
   return (
     <>
-      <PageHeaders
-        mainTitle="Consulting"
-        subTitle="Bespoke, practical, tailored"
-      />
+      <section id="section1">
+        <PageHeaders
+          mainTitle="Consulting"
+          subTitle="Bespoke, practical, tailored"
+        />
+      </section>
+      <section id="section2">
+        <ConsultingHero />
+      </section>
       <LLMNavbar
         menuItems={[
           { id: "section1", label: "one bit" },

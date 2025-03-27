@@ -222,16 +222,17 @@
 }
 
 .info-text {
+  font-family: "Helvetica";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   color: #1e1e1e;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease 0.8s;
-  width: 120px;
+  width: 220px;
 }
 
 .profile-item:hover .info-text {

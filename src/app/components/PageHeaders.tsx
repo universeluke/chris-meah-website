@@ -32,7 +32,7 @@ export default function PageHeaders({ mainTitle, subTitle }: PageHeadersProps) {
     };
   }, []);
 
-  const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
+  const titleTransform = `translateY(${scrollPosition * 0.33}px)`;
 
   return (
     <div className="pageheader-section">
