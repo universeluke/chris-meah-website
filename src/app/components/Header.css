@@ -8,10 +8,37 @@
 .header-section {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 20px;
+  padding: 0 20px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.text-content {
+  flex: 0 0 auto;
+}
+
+.network-wrapper {
+  opacity: 0;
+  flex: 0 0 auto;
+  margin-left: 40px;
+  position: relative;
+  height: 500px;
+  width: 500px;
+  transition: opacity 0.8s ease-out,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+}
+
+.network-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* THE MOST USEFUL FONTSIZE TRICK I'VE EVER SEEN */
@@ -19,8 +46,7 @@
 
 .name-title {
   font-family: "Helvetica", sans-serif;
-  font-size: 14rem;
-  width: 78.5vw;
+  font-size: 10rem;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out,
@@ -38,8 +64,7 @@
 .name-subtitle {
   font-family: "Helvetica", sans-serif;
   color: var(--main-blue);
-  font-size: calc(5rem);
-  width: 78.5vw;
+  font-size: 5rem;
   opacity: 0;
   transform: translateY(-30px);
   transition: opacity 0.8s ease-out,
@@ -51,4 +76,74 @@
 .name-subtitle.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Network styles from your original CSS */
+.network-container {
+  width: 100%;
+  height: 450px;
+  min-height: 450px;
+  position: relative;
+  overflow: visible;
+  /* background: radial-gradient(ellipse at center, #102049 0%, #090c2b 100%); */
+}
+
+.network-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.node-label {
+  font-size: 0.75rem;
+  background-color: rgba(0, 10, 30, 0.7);
+  color: #a0cfff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 0 5px rgba(65, 157, 255, 0.5);
+  box-shadow: 0 0 8px rgba(0, 30, 60, 0.5);
+  border: 1px solid rgba(65, 157, 255, 0.3);
+}
+
+.active-node-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.2rem;
+  background-color: rgba(0, 10, 30, 0.7);
+  color: #ff7b00;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-shadow: 0 0 8px rgba(255, 123, 0, 0.7);
+  box-shadow: 0 0 15px rgba(0, 30, 60, 0.7);
+  border: 1px solid rgba(255, 123, 0, 0.3);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Cursor styles */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .network-wrapper {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .name-title {
+    font-size: 6rem;
+  }
+
+  .name-subtitle {
+    font-size: 3rem;
+  }
 }

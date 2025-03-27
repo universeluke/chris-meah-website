@@ -7,6 +7,7 @@ import LLMNavbar from "../components/LLMNavbar";
 import PageHeaders from "../components/PageHeaders";
 import ConsultingHero from "../components/ConsultingHero";
 import GridLines from "../components/GridLines";
+import ScrollLine from "../components/ScrollLine";
 
 export default function Consulting() {
   const menuItems = useMemo(
@@ -31,6 +32,7 @@ export default function Consulting() {
       <section id="section2">
         <ConsultingHero />
       </section>
+      <ScrollLine />
       <LLMNavbar menuItems={menuItems} />
       <Menu />
     </>

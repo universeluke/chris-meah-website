@@ -50,13 +50,13 @@
 }
 
 .llm-navbar-button:hover {
-  background-color: #2f2f2f;
+  background-color: var(--main-blue);
   color: white;
   transform: scale(1.5);
 }
 
 .llm-navbar-button.active {
-  background-color: #2f2f2f;
+  background-color: #d0410a;
   color: white;
   transform: scale(1.3);
 }

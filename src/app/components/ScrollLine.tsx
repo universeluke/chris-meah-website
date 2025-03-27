@@ -8,7 +8,7 @@ interface ScrollLineProps {
 }
 
 const ScrollLine: React.FC<ScrollLineProps> = ({
-  maxLength = 300,
+  maxLength = 200,
 
   lineWidth = 4,
   startPosition = 0.5, // start it later so that the animation can be seen
@@ -70,12 +70,12 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
             y1="0"
             x2="20"
             y2={lineLength}
-            stroke="#2b359f"
+            stroke="#105d91"
             strokeWidth={lineWidth}
             strokeLinecap="round"
           />
           {lineLength > 0 && (
-            <circle cx="20" cy={lineLength} r="6" fill="#2b359f" />
+            <circle cx="20" cy={lineLength} r="6" fill="#105d91" />
           )}
         </svg>
       </div>

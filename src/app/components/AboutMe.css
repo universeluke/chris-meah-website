@@ -3,13 +3,13 @@
   opacity: 0;
   transition: opacity 0.5s ease;
   padding-top: 200px;
-  padding-bottom: 1000px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding-left: 20px;
+  padding-bottom: 750px;
 }
 
 .about-me-container.animate {

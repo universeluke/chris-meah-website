@@ -129,7 +129,7 @@ const LLMNavbar: React.FC<LLMNavbarProps> = ({ menuItems }) => {
                 y1={`${startYPercent * 100}%`}
                 x2={endX}
                 y2={`${endYPercent * 100}%`}
-                stroke="#000000"
+                stroke="#828282"
                 strokeWidth="2"
                 className={`llm-navbar-line ${showLines ? "visible" : ""}`}
               />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NetworkGraph from "./NetworkGraph";
 import "./Header.css";
 
 export default function Header() {
@@ -40,26 +41,41 @@ export default function Header() {
   }, []);
 
   const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
-  const subtitleTransform = `translateY(${scrollPosition * 0.64}px)`;
+  const subtitleTransform = `translateY(${scrollPosition * 0.67}px)`;
+  const graphTransform = `translateY(-${scrollPosition * 0.5}px)`;
 
   return (
     <div className="header-section">
-      <h1
-        className={`name-title ${isVisible ? "visible" : ""}`}
-        style={{ transform: isVisible ? titleTransform : "translateY(30px)" }}
-      >
-        Chris[Meah]
-      </h1>
-      <h2
-        className={`name-subtitle ${isVisible ? "visible" : ""}`}
-        style={{
-          transform: isVisible ? subtitleTransform : "translateY(-30px)",
-          opacity: isVisible ? subtitleOpacity : 0,
-          transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
-        }}
-      >
-        the AI Genius Extraordinaire
-      </h2>
+      <div className="header-content">
+        <div className="text-content">
+          <h1
+            className={`name-title ${isVisible ? "visible" : ""}`}
+            style={{
+              transform: isVisible ? titleTransform : "translateY(30px)",
+            }}
+          >
+            Chris[Meah]
+          </h1>
+          <h2
+            className={`name-subtitle ${isVisible ? "visible" : ""}`}
+            style={{
+              transform: isVisible ? subtitleTransform : "translateY(-30px)",
+              opacity: isVisible ? subtitleOpacity : 0,
+              transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+            }}
+          >
+            the AI Genius Extraordinaire
+          </h2>
+        </div>
+        <div
+          className={`network-wrapper ${isVisible ? "visible" : ""}`}
+          style={{
+            transform: isVisible ? graphTransform : "translateY(30px)",
+          }}
+        >
+          <NetworkGraph />
+        </div>
+      </div>
     </div>
   );
 }
