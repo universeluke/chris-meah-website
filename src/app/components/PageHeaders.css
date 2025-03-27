@@ -37,5 +37,5 @@
 
 .pageheader-subtitle {
   font-size: 5rem;
-  color: #2b359f;
+  color: var(--main-blue);
 }

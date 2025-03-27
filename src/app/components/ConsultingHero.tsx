@@ -1,5 +1,6 @@
 import React from "react";
 import "./ConsultingHero.css";
+import ScrollLine from "./ScrollLine";
 
 export default function ConsultingHero() {
   return (
@@ -13,6 +14,7 @@ export default function ConsultingHero() {
           outcomes, I placeholder placeholder placeholder placeholder
           placeholder
         </p>
+        <ScrollLine />
         {/* chatgpt placeholder text for cards */}
         <div className="services-grid">
           <div className="service-card">
