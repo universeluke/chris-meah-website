@@ -42,7 +42,8 @@
   justify-content: center;
   transition: all 0.3s ease;
   position: relative;
-  background-color: #e5e7eb;
+  color: rgb(0, 0, 0);
+  background-color: #e6e6e6;
   border: none;
   cursor: pointer;
   scale: 0.8;
@@ -50,14 +51,14 @@
 }
 
 .llm-navbar-button:hover {
-  background-color: var(--main-blue);
+  background-color: #d0410a;
   color: white;
   transform: scale(1.5);
 }
 
 .llm-navbar-button.active {
   background-color: #d0410a;
-  color: white;
+  color: rgb(255, 255, 255);
   transform: scale(1.3);
 }
 

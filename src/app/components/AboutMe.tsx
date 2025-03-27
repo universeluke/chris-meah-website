@@ -141,38 +141,6 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                 </svg>
               </div>
             </div>
-
-            <div className="svg-connector">
-              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
-                <line
-                  className="connector-line"
-                  x1="1"
-                  y1="0"
-                  x2="1"
-                  y2="140"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-
-            <div className="info-circle-container">
-              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-                <circle
-                  className="info-circle"
-                  cx="150"
-                  cy="150"
-                  r="140"
-                  fill="#f5f5f5"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-              <div className="info-text">
-                <p>chris</p>
-                <p>batman</p>
-              </div>
-            </div>
           </div>
 
           <div
@@ -199,38 +167,6 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                     strokeWidth="2"
                   />
                 </svg>
-              </div>
-            </div>
-
-            <div className="svg-connector">
-              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
-                <line
-                  className="connector-line"
-                  x1="1"
-                  y1="0"
-                  x2="1"
-                  y2="140"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-
-            <div className="info-circle-container">
-              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-                <circle
-                  className="info-circle"
-                  cx="150"
-                  cy="150"
-                  r="140"
-                  fill="#f5f5f5"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-              <div className="info-text">
-                <p>school</p>
-                <p>of rock!</p>
               </div>
             </div>
           </div>
@@ -270,38 +206,6 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
                     strokeWidth="2"
                   />
                 </svg>
-              </div>
-            </div>
-
-            <div className="svg-connector">
-              <svg width="2" height="140" xmlns="http://www.w3.org/2000/svg">
-                <line
-                  className="connector-line"
-                  x1="1"
-                  y1="0"
-                  x2="1"
-                  y2="140"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-
-            <div className="info-circle-container">
-              <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-                <circle
-                  className="info-circle"
-                  cx="150"
-                  cy="150"
-                  r="140"
-                  fill="#f5f5f5"
-                  stroke="#444444"
-                  strokeWidth="2"
-                />
-              </svg>
-              <div className="info-text">
-                <p>talkin</p>
-                <p>and chattin</p>
               </div>
             </div>
           </div>

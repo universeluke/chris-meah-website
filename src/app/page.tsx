@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Menu from "./components/Menu";
 import GridLines from "./components/GridLines";
+import CircleTransition from "./components/CircleTransition";
 
 export default function Home() {
   const [showChatbox, setShowChatbox] = useState(false);
@@ -135,26 +136,17 @@ export default function Home() {
               // When I'm not teaching, building, or training AI, you can find me solving other mysteries of the universe (like why aren't people more passionate about good sandwiches, and has everyone noticed my beard yet?)`}
             />
           </section>
-
           <section id="section3">
-            <h2>Building</h2>
+            <CircleTransition />
           </section>
 
-          <section id="section4">
-            <h2>Training</h2>
-          </section>
+          <section id="section4"></section>
 
-          <section id="section5">
-            <h2>Speaking</h2>
-          </section>
+          <section id="section5"></section>
 
-          <section id="section6">
-            <h2>Services</h2>
-          </section>
+          <section id="section6"></section>
 
-          <section id="section7">
-            <h2>Contact</h2>
-          </section>
+          <section id="section7"></section>
 
           <LLMNavbar menuItems={menuItems} />
           <Menu />

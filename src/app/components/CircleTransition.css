@@ -1,0 +1,67 @@
+.rstz-main-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 200px;
+}
+
+.rstz-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rstz-dark-layer {
+  background-color: #2d3748;
+  z-index: 1;
+}
+
+.rstz-white-layer {
+  background-color: white;
+  z-index: 2;
+}
+
+.rstz-content-wrapper {
+  position: relative;
+  z-index: 5;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.rstz-header-block {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.rstz-header-block h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.rstz-header-block p {
+  font-size: 1.125rem;
+  color: white;
+}
+
+.rstz-content-segment {
+  padding: 2rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+.rstz-content-segment h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.rstz-content-segment p {
+  margin-bottom: 0.5rem;
+  color: white;
+}
