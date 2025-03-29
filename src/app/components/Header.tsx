@@ -42,7 +42,7 @@ export default function Header() {
 
   const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
   const subtitleTransform = `translateY(${scrollPosition * 0.67}px)`;
-  const graphTransform = `translateY(${scrollPosition * 2}px)`;
+  const graphTransform = `translateY(-${scrollPosition * 2}px)`;
 
   return (
     <div className="header-section">

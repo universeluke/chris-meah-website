@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutMe.css";
+import Link from "next/link";
 
 interface AboutMeProps {
   imageUrl?: string;
@@ -10,12 +11,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [sectionOpacity, setSectionOpacity] = useState(1);
 
   const [itemsVisible, setItemsVisible] = useState({
     firstItem: false,
     secondItem: false,
     thirdItem: false,
   });
+
+  const circleTitles = {
+    chris: "LINKEDIN",
+    schoolOfCode: "SCHOOL OF CODE",
+    video: "TALKS",
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,7 +61,21 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const sectionTop = sectionRef.current?.offsetTop || 0;
+      const sectionHeight = sectionRef.current?.offsetHeight || 0;
       const relativeScroll = scrollTop - sectionTop;
+
+      const fadeOutStart = 0;
+      const fadeOutEnd = sectionHeight * 0.5; // when to complete fading out
+
+      if (relativeScroll > fadeOutStart) {
+        const fadeProgress = Math.min(
+          1,
+          (relativeScroll - fadeOutStart) / (fadeOutEnd - fadeOutStart)
+        );
+        setSectionOpacity(Math.max(0, 1 - fadeProgress));
+      } else {
+        setSectionOpacity(1);
+      }
 
       if (
         relativeScroll > -window.innerHeight &&
@@ -78,13 +101,13 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
     const viewportHeight = window.innerHeight;
 
     // fade zones - top 50% and bottom 50% of viewport will have fade effect
-    const fadeZone = viewportHeight * 0.5;
+    const fadeZone = viewportHeight * 0.4;
 
     // where the element is compared to the viewport
     const rect = sectionRef.current?.getBoundingClientRect();
     if (!rect) return 1;
 
-    const titlePosition = rect.top + 500; // wiggle the + 400 to adjust where the title fade will be
+    const titlePosition = rect.top * 2 + 400; // wiggle the + 400 to adjust where the title fade will be
 
     if (titlePosition < fadeZone) {
       return titlePosition / fadeZone;
@@ -108,6 +131,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
     <div
       ref={sectionRef}
       className={`about-me-container ${isVisible ? "animate" : ""}`}
+      style={{ opacity: sectionOpacity }}
     >
       <div className="about-me-content">
         <h2 className="about-me-title" style={titleParallax}>
@@ -119,34 +143,40 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             className={`profile-item ${
               itemsVisible.firstItem ? "visible" : ""
             }`}
+            onMouseEnter={() => setHoveredItem("chris")}
+            onMouseLeave={() => setHoveredItem(null)}
           >
-            <div className="profile-image-container">
-              <img src={imageUrl} alt={altText} className="profile-image" />
+            <Link href="https://www.linkedin.com/in/chrismeah/">
+              <div className="profile-image-container">
+                <img src={imageUrl} alt={altText} className="profile-image" />
 
-              <div className="profile-image-border">
-                <svg
-                  className="circle-svg"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    className="animated-circle"
-                    cx="50"
-                    cy="50"
-                    r="48"
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="2"
-                  />
-                </svg>
+                <div className="profile-image-border">
+                  <svg
+                    className="circle-svg"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      className="animated-circle"
+                      cx="50"
+                      cy="50"
+                      r="48"
+                      fill="none"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div
             className={`profile-item ${
               itemsVisible.secondItem ? "visible" : ""
             }`}
+            onMouseEnter={() => setHoveredItem("schoolOfCode")}
+            onMouseLeave={() => setHoveredItem(null)}
           >
             <div className="profile-image-container">
               <img src={"/soc.png"} alt="soc image" className="profile-image" />
@@ -175,6 +205,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             className={`profile-item ${
               itemsVisible.thirdItem ? "visible" : ""
             }`}
+            onMouseEnter={() => setHoveredItem("video")}
+            onMouseLeave={() => setHoveredItem(null)}
           >
             <div className="profile-video-container">
               <div className="video-wrapper">
@@ -209,6 +241,13 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
               </div>
             </div>
           </div>
+        </div>
+        <div className={`hover-title-container ${hoveredItem ? "active" : ""}`}>
+          <h1 className="hover-title">
+            {hoveredItem // use hovered circle as key
+              ? circleTitles[hoveredItem as keyof typeof circleTitles]
+              : ""}
+          </h1>
         </div>
       </div>
     </div>

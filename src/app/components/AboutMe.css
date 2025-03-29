@@ -9,7 +9,8 @@
   justify-content: center;
   align-items: flex-start;
   padding-left: 20px;
-  padding-bottom: 200px;
+  padding-bottom: 0px;
+  overflow: hidden;
 }
 
 .about-me-container.animate {
@@ -167,4 +168,35 @@
 .profile-video-container:hover {
   scale: 1.05;
   box-shadow: 0px 0px 20px #999999;
+}
+
+.hover-title-container {
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.hover-title-container.active {
+  transform: translateY(-10vh);
+}
+
+.hover-title {
+  font-size: 12rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.614);
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  opacity: 1;
+  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
