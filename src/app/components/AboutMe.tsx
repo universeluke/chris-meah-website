@@ -130,11 +130,16 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
   return (
     <div
       ref={sectionRef}
-      className={`about-me-container ${isVisible ? "animate" : ""}`}
+      className={`about-me-container ${isVisible ? "animate" : ""} ${
+        hoveredItem ? "item-hovered" : ""
+      }`}
       style={{ opacity: sectionOpacity }}
     >
       <div className="about-me-content">
-        <h2 className="about-me-title" style={titleParallax}>
+        <h2
+          className={`about-me-title ${hoveredItem ? "hidden" : ""}`}
+          style={titleParallax}
+        >
           About
         </h2>
 
@@ -142,6 +147,12 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
           <div
             className={`profile-item ${
               itemsVisible.firstItem ? "visible" : ""
+            } ${
+              hoveredItem === "chris"
+                ? "hovered"
+                : hoveredItem
+                ? "not-hovered"
+                : ""
             }`}
             onMouseEnter={() => setHoveredItem("chris")}
             onMouseLeave={() => setHoveredItem(null)}
@@ -174,6 +185,12 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
           <div
             className={`profile-item ${
               itemsVisible.secondItem ? "visible" : ""
+            } ${
+              hoveredItem === "schoolOfCode"
+                ? "hovered"
+                : hoveredItem
+                ? "not-hovered"
+                : ""
             }`}
             onMouseEnter={() => setHoveredItem("schoolOfCode")}
             onMouseLeave={() => setHoveredItem(null)}
@@ -204,6 +221,12 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
           <div
             className={`profile-item ${
               itemsVisible.thirdItem ? "visible" : ""
+            } ${
+              hoveredItem === "video"
+                ? "hovered"
+                : hoveredItem
+                ? "not-hovered"
+                : ""
             }`}
             onMouseEnter={() => setHoveredItem("video")}
             onMouseLeave={() => setHoveredItem(null)}
@@ -242,9 +265,12 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
             </div>
           </div>
         </div>
+
+        <div className={`white-overlay ${hoveredItem ? "active" : ""}`}></div>
+
         <div className={`hover-title-container ${hoveredItem ? "active" : ""}`}>
           <h1 className="hover-title">
-            {hoveredItem // use hovered circle as key
+            {hoveredItem
               ? circleTitles[hoveredItem as keyof typeof circleTitles]
               : ""}
           </h1>

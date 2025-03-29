@@ -18,8 +18,8 @@ export default function Header() {
       const currentScroll = window.scrollY;
       setScrollPosition(currentScroll);
 
-      const fadeStartPoint = 1000;
-      const fadeEndPoint = 1300;
+      const fadeStartPoint = 960;
+      const fadeEndPoint = 1100;
 
       if (currentScroll <= fadeStartPoint) {
         setSubtitleOpacity(1);
