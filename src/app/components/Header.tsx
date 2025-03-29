@@ -42,7 +42,7 @@ export default function Header() {
 
   const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
   const subtitleTransform = `translateY(${scrollPosition * 0.67}px)`;
-  const graphTransform = `translateY(-${scrollPosition * 0.5}px)`;
+  const graphTransform = `translateY(${scrollPosition * 2}px)`;
 
   return (
     <div className="header-section">
@@ -70,7 +70,7 @@ export default function Header() {
         <div
           className={`network-wrapper ${isVisible ? "visible" : ""}`}
           style={{
-            transform: isVisible ? graphTransform : "translateY(30px)",
+            transform: isVisible ? graphTransform : "translateX(60px)",
           }}
         >
           <NetworkGraph />
