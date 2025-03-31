@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #181818;
   z-index: 1000;
   opacity: 1;
   transition: opacity 1s ease-out;
@@ -33,8 +33,8 @@
 
 .fakeChatHeader {
   padding: 16px;
-  background-color: #568a5a;
-  color: white;
+  background-color: #fcca0b;
+  color: #232323;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -43,14 +43,14 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background-color: #f8f9fa;
+  background-color: #292929;
   display: flex;
   flex-direction: column;
 }
 
 .promptContainer {
   margin-top: 10px;
-  background-color: white;
+  background-color: #232323;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -59,11 +59,11 @@
 
 .promptUser {
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
 }
 
 .promptText {
-  color: #222;
+  color: #ffffff;
 }
 
 .cursor {
