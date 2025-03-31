@@ -64,8 +64,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
       const sectionHeight = sectionRef.current?.offsetHeight || 0;
       const relativeScroll = scrollTop - sectionTop;
 
-      const fadeOutStart = 0;
-      const fadeOutEnd = sectionHeight * 0.5; // when to complete fading out
+      const fadeOutStart = 0.5;
+      const fadeOutEnd = sectionHeight * 1; // when to complete fading out
 
       if (relativeScroll > fadeOutStart) {
         const fadeProgress = Math.min(
@@ -106,8 +106,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
     // where the element is compared to the viewport
     const rect = sectionRef.current?.getBoundingClientRect();
     if (!rect) return 1;
-
-    const titlePosition = rect.top * 2 + 400; // wiggle the + 400 to adjust where the title fade will be
+    const x = 500; // wiggle x to adjust where the title fade will be
+    const titlePosition = rect.top * 2 + x;
 
     if (titlePosition < fadeZone) {
       return titlePosition / fadeZone;
@@ -122,7 +122,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ imageUrl = "", altText = "" }) => {
 
   const titleParallax = {
     transform: isVisible
-      ? `translateY(${scrollPosition * 0.5 - 120}px)`
+      ? `translateY(${scrollPosition * 0.65 - 120}px)`
       : "translateY(20px)",
     opacity: calculateTitleOpacity(),
   };

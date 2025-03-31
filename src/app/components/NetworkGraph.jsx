@@ -62,10 +62,10 @@ const Node = ({ position, name, onNodeClick, highlighted = false }) => {
         <sphereGeometry args={[0.3, 32, 32]} />
         {highlighted ? (
           <MeshDistortMaterial
-            color="#ff7b00"
-            emissive="#ff5500"
+            color="#fcca0b"
+            emissive="#fcca0b"
             emissiveIntensity={0.5}
-            metalness={0.8}
+            metalness={0.3}
             roughness={0.2}
             speed={3}
             distort={0.1}
@@ -73,16 +73,15 @@ const Node = ({ position, name, onNodeClick, highlighted = false }) => {
         ) : (
           <meshPhysicalMaterial
             color={hovered ? "#7fc1ff" : "#67c7eb"}
-            emissive="#3498db"
-            emissiveIntensity={0.3}
-            metalness={0.8}
-            roughness={0.2}
+            emissive="#FFFFFF"
+            emissiveIntensity={1}
+            metalness={1}
+            roughness={0}
             clearcoat={1}
-            clearcoatRoughness={0.2}
+            clearcoatRoughness={0}
           />
         )}
       </mesh>
-      {/* Labels removed as requested */}
     </group>
   );
 };
@@ -153,10 +152,10 @@ const AutoRotate = ({ speed = 0.1, enabled = true, zoomEnabled = true }) => {
     };
 
     const endInteraction = () => {
-      // Set a timeout to resume auto-rotation after 2 seconds of inactivity
+      // Set a timeout to resume auto-rotation after x seconds of inactivity
       rotationTimeout.current = setTimeout(() => {
         setIsUserInteracting(false);
-      }, 2000);
+      }, 500);
     };
 
     window.addEventListener("mousedown", startInteraction);

@@ -108,7 +108,7 @@ const Menu: React.FC = () => {
                     y1={startY + centreOfNodesOffset}
                     x2={`${endXPercent * 100}%`}
                     y2={endY + centreOfNodesOffset}
-                    stroke="#000000"
+                    stroke="#FFFFFF"
                     strokeWidth="2"
                     className={`menu-line ${showLines ? "visible" : ""}`}
                   />

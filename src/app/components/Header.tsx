@@ -18,8 +18,8 @@ export default function Header() {
       const currentScroll = window.scrollY;
       setScrollPosition(currentScroll);
 
-      const fadeStartPoint = 960;
-      const fadeEndPoint = 1100;
+      const fadeStartPoint = 1150;
+      const fadeEndPoint = 1200;
 
       if (currentScroll <= fadeStartPoint) {
         setSubtitleOpacity(1);
@@ -42,7 +42,7 @@ export default function Header() {
 
   const titleTransform = `translateY(${scrollPosition * 0.2}px)`;
   const subtitleTransform = `translateY(${scrollPosition * 0.67}px)`;
-  const graphTransform = `translateY(-${scrollPosition * 2}px)`;
+  const graphTransform = `translateY(${scrollPosition * 0.35}px)`;
 
   return (
     <div className="header-section">

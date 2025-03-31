@@ -87,7 +87,7 @@
 }
 
 .menu-button:hover {
-  background-color: #d0410a;
+  background-color: var(--main-yellow);
   color: white;
   transform: scale(1.2);
 }

@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  padding-top: 0px;
+  padding-top: 120px;
 }
 
 .rstz-bg-layer {
@@ -15,12 +15,12 @@
 }
 
 .rstz-dark-layer {
-  background-color: #2d3748;
+  background-color: var(--main-yellow);
   z-index: 1;
 }
 
 .rstz-white-layer {
-  background-color: white;
+  background-color: #181818;
   z-index: 2;
 }
 
@@ -34,34 +34,34 @@
 .rstz-header-block {
   padding: 2rem;
   text-align: center;
-  color: white;
+  color: #181818;
 }
 
 .rstz-header-block h1 {
   font-size: 2.25rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: white;
+  color: #181818;
 }
 
 .rstz-header-block p {
   font-size: 1.125rem;
-  color: white;
+  color: #181818;
 }
 
 .rstz-content-segment {
   padding: 2rem;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #181818;
 }
 
 .rstz-content-segment h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: white;
+  color: #181818;
 }
 
 .rstz-content-segment p {
   margin-bottom: 0.5rem;
-  color: white;
+  color: #181818;
 }

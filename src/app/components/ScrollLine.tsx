@@ -70,12 +70,12 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
             y1="0"
             x2="20"
             y2={lineLength}
-            stroke="#105d91"
+            stroke="#fcca0b"
             strokeWidth={lineWidth}
             strokeLinecap="round"
           />
           {lineLength > 0 && (
-            <circle cx="20" cy={lineLength} r="6" fill="#105d91" />
+            <circle cx="20" cy={lineLength} r="6" fill="#fcca0b" />
           )}
         </svg>
       </div>
