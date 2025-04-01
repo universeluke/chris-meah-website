@@ -14,7 +14,12 @@ export default function ConsultingHero() {
           outcomes, I placeholder placeholder placeholder placeholder
           placeholder
         </p>
-        <ScrollLine />
+        <ScrollLine
+          maxLength={200}
+          lineWidth={4}
+          startPosition={0.5}
+          color={"#fcca0b"}
+        />
         {/* chatgpt placeholder text for cards */}
         <div className="services-grid">
           <div className="service-card">

@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 
 interface ScrollLineProps {
   maxLength?: number;
-
+  color: string;
   lineWidth?: number;
   startPosition?: number;
 }
 
 const ScrollLine: React.FC<ScrollLineProps> = ({
-  maxLength = 200,
-
-  lineWidth = 4,
-  startPosition = 0.5, // start it later so that the animation can be seen
+  maxLength,
+  color,
+  lineWidth,
+  startPosition, // start it later so that the animation can be seen
 }) => {
   const [lineLength, setLineLength] = useState<number>(0);
   const lineRef = useRef<SVGLineElement>(null);
@@ -33,14 +33,18 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
 
       // check if element is in viewport
       if (containerRect.top < windowHeight && containerRect.bottom > 0) {
-        if (scrollPercentage >= startPosition) {
+        if (scrollPercentage >= (startPosition ?? 0)) {
           const adjustedPercentage =
-            (scrollPercentage - startPosition) / (1 - startPosition);
+            (scrollPercentage - (startPosition ?? 0)) /
+            (1 - (startPosition ?? 0));
 
           const visiblePortion = Math.min(adjustedPercentage, 0.9);
 
           setLineLength(
-            Math.max(0, Math.min(visiblePortion * maxLength, maxLength))
+            Math.max(
+              0,
+              Math.min(visiblePortion * (maxLength ?? 0), maxLength ?? 0)
+            )
           );
         } else {
           setLineLength(0);
@@ -70,12 +74,12 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
             y1="0"
             x2="20"
             y2={lineLength}
-            stroke="#fcca0b"
+            stroke={color}
             strokeWidth={lineWidth}
             strokeLinecap="round"
           />
           {lineLength > 0 && (
-            <circle cx="20" cy={lineLength} r="6" fill="#fcca0b" />
+            <circle cx="20" cy={lineLength} r="6" fill={color} />
           )}
         </svg>
       </div>

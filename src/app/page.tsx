@@ -7,7 +7,8 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Menu from "./components/Menu";
 import GridLines from "./components/GridLines";
-import CircleTransition from "./components/CircleTransition";
+import CircleTransition from "./components/Building";
+import Training from "./components/Training";
 
 export default function Home() {
   const [showChatbox, setShowChatbox] = useState(false);
@@ -140,7 +141,9 @@ export default function Home() {
             <CircleTransition />
           </section>
 
-          <section id="section4"></section>
+          <section id="section4">
+            <Training />
+          </section>
 
           <section id="section5"></section>
 

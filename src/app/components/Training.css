@@ -1,0 +1,5 @@
+.training-container {
+  height: 100vw;
+  width: 100%;
+  background-color: var(--main-yellow);
+}
