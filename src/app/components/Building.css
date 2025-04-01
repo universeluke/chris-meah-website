@@ -50,15 +50,16 @@
 }
 
 .building-content-segment {
-  padding: 2rem;
+  padding: 3rem;
   border-bottom: 1px solid #181818;
 }
 
 .building-content-segment h2 {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #181818;
+  text-align: center;
 }
 
 .building-content-segment p {
@@ -73,10 +74,17 @@
 }
 
 .building-card {
-  background-color: #181818;
+  background-color: #222222;
   padding: 1.5rem;
   border-radius: 8px;
   color: #fcca0b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: ease 0.3s;
+}
+
+.building-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .building-card h3 {
@@ -92,9 +100,15 @@
 .building-project-card {
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  background-color: #181818;
+  background-color: #222222;
   border-radius: 8px;
   color: #fcca0b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: ease 0.3s;
+}
+.building-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .building-project-card h3 {
@@ -120,4 +134,8 @@
   .building-cards-container {
     grid-template-columns: 1fr;
   }
+}
+
+.quotes {
+  font-size: 1.2rem;
 }

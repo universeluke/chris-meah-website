@@ -148,12 +148,12 @@ const Building: React.FC = () => {
 
         <div className="building-content-segment">
           <h2>AI Building Philosophy</h2>
-          <p>
+          <p className="quotes">
             &quot;Many think AI will leave people behind and if we aren’t
             careful there’s a chance it will, but we also have a chance to make
             sure everyone can access what they need to.&quot;
           </p>
-          <p>
+          <p className="quotes">
             &quot;One of the purposes of AI is researching it will help us
             understand biological intelligence and the brain much better. As we
             learn more about how the brain works, we can also feed that

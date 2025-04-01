@@ -83,7 +83,7 @@ export default function Home() {
       <div className={styles.fakeChatContainer}>
         <div className={styles.fakeChatbox}>
           <div className={styles.fakeChatHeader}>
-            <span>The most recent and trendy LLM</span>
+            <span>Recent and Trendy LLM</span>
           </div>
           <div className={styles.fakeChatContent}>
             <div className={styles.promptContainer}>
@@ -103,7 +103,7 @@ export default function Home() {
       <div className={`${styles.fakeChatContainer} ${styles.fadeOut}`}>
         <div className={styles.fakeChatbox}>
           <div className={styles.fakeChatHeader}>
-            <span>The most recent and trendy LLM</span>
+            <span>Recent and Trendy LLM</span>
           </div>
           <div className={styles.fakeChatContent}>
             <div className={styles.promptContainer}>
