@@ -5,13 +5,15 @@ interface ScrollLineProps {
   color: string;
   lineWidth?: number;
   startPosition?: number;
+  speedFactor?: number;
 }
 
 const ScrollLine: React.FC<ScrollLineProps> = ({
   maxLength,
   color,
   lineWidth,
-  startPosition, // start it later so that the animation can be seen
+  startPosition = 0, // start it later so that the animation can be seen
+  speedFactor = 1,
 }) => {
   const [lineLength, setLineLength] = useState<number>(0);
   const lineRef = useRef<SVGLineElement>(null);
@@ -35,10 +37,10 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
       if (containerRect.top < windowHeight && containerRect.bottom > 0) {
         if (scrollPercentage >= (startPosition ?? 0)) {
           const adjustedPercentage =
-            (scrollPercentage - (startPosition ?? 0)) /
-            (1 - (startPosition ?? 0));
+            (scrollPercentage - startPosition) /
+            ((1 - startPosition) / speedFactor);
 
-          const visiblePortion = Math.min(adjustedPercentage, 0.9);
+          const visiblePortion = Math.min(adjustedPercentage, 1.0);
 
           setLineLength(
             Math.max(
@@ -56,7 +58,7 @@ const ScrollLine: React.FC<ScrollLineProps> = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [maxLength, startPosition]);
+  }, [maxLength, startPosition, speedFactor]);
 
   // svg line with a circle that tracks its y-coord to the current length of the svg line
   return (

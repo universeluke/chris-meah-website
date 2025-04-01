@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Menu from "./components/Menu";
 import GridLines from "./components/GridLines";
-import CircleTransition from "./components/Building";
+import Building from "./components/Building";
 import Training from "./components/Training";
 
 export default function Home() {
@@ -138,7 +138,7 @@ export default function Home() {
             />
           </section>
           <section id="section3">
-            <CircleTransition />
+            <Building />
           </section>
 
           <section id="section4">

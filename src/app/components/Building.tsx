@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Building.css";
+import ScrollLine from "./ScrollLine";
 
 const Building: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,7 +25,7 @@ const Building: React.FC = () => {
       // const dummyContent = Array(20)
       //   .fill(null)
       //   .map((_, i) => (
-      //     <div key={i} className="rstz-content-segment">
+      //     <div key={i} className="building-content-segment">
       //       <h2>Section {i + 1}</h2>
       //     </div>
       //   ));
@@ -61,13 +62,13 @@ const Building: React.FC = () => {
   };
 
   return (
-    <div className="rstz-main-container" ref={containerRef}>
+    <div className="building-main-container" ref={containerRef}>
       {isInView && (
         <>
-          <div className="rstz-bg-layer rstz-dark-layer" />
+          <div className="building-bg-layer building-dark-layer" />
 
           <div
-            className="rstz-bg-layer rstz-white-layer"
+            className="building-bg-layer building-white-layer"
             style={{
               maskImage: getRadialGradient(),
               WebkitMaskImage: getRadialGradient(),
@@ -78,60 +79,85 @@ const Building: React.FC = () => {
         </>
       )}
 
-      <div className="rstz-content-wrapper">
-        <div className="rstz-header-block">
+      <div className="building-content-wrapper">
+        <div className="building-header-block">
           <h1>Building</h1>
         </div>
-        <div className="rstz-content-segment">
+        <ScrollLine
+          maxLength={200}
+          lineWidth={4}
+          startPosition={0.39}
+          color={"#181818"}
+          speedFactor={6}
+        />
+        <div className="building-content-segment">
           <h2>Core Expertise</h2>
-          <div className="rstz-cards-container">
-            <div className="rstz-card">
+          <div className="building-cards-container">
+            <div className="building-card">
               <h3>Machine Learning</h3>
               <p>
                 Developing systems that learn from data and improve over time
               </p>
             </div>
-            <div className="rstz-card">
+            <div className="building-card">
               <h3>Neural Networks</h3>
               <p>
                 Building artificial neural networks inspired by the human brain
               </p>
             </div>
-            <div className="rstz-card">
+            <div className="building-card">
               <h3>Natural Language</h3>
               <p>Creating AI that understands and generates human language</p>
             </div>
           </div>
         </div>
 
-        <div className="rstz-content-segment">
+        <div className="building-content-segment">
           <h2>Recent Projects</h2>
-          <div className="rstz-project-card">
-            <h3>Conversational AI Assistant</h3>
+          <div className="building-project-card">
+            <h3>
+              Led a research project on single-snapshot 3D cameras and
+              tomography
+            </h3>
             <p>
-              An intelligent system that can understand context and have natural
-              conversations
+              Paving the way for cutting-edge volume microscopy and
+              bioluminescence imaging, this work resulted in multiple
+              publications, national and international collaborations, and new
+              research avenues at the University.
             </p>
           </div>
-          <div className="rstz-project-card">
-            <h3>Computer Vision for Healthcare</h3>
+          <div className="building-project-card">
+            <h3>Building an AI No Limit Texas Hold&apos;em Poker Bot</h3>
             <p>
-              AI that helps doctors identify patterns in medical images for
-              earlier diagnosis
+              This was a large neural network trained on a distributed
+              supercomputer cluster (BEAR) on over 1 billion poker hands, also
+              using reinforcement learning (using a tournament of evolutionary
+              algorithms and montecarlo simulation for automated rewards) during
+              self-play to explore the game, resulting in beating the benchmarks
+              for the best systems in the world.
+            </p>
+          </div>
+          <div className="building-project-card">
+            <h3>Using MALDI to detect glioblastoma boundaries</h3>
+            <p>
+              In collaboration with the Medical School, Computer Science and
+              Chemistry, in order to improve surgical outcomes.
             </p>
           </div>
         </div>
 
-        <div className="rstz-content-segment">
+        <div className="building-content-segment">
           <h2>AI Building Philosophy</h2>
           <p>
-            &quot;AI should augment human capabilities, not replace them. The
-            most powerful systems are those that combine human creativity with
-            machine intelligence.&quot;
+            &quot;Many think AI will leave people behind and if we aren’t
+            careful there’s a chance it will, but we also have a chance to make
+            sure everyone can access what they need to.&quot;
           </p>
           <p>
-            &quot;Building ethical AI requires diverse perspectives and a deep
-            consideration of societal impact at every step.&quot;
+            &quot;One of the purposes of AI is researching it will help us
+            understand biological intelligence and the brain much better. As we
+            learn more about how the brain works, we can also feed that
+            understanding back towards AI to unlock improved performance. &quot;
           </p>
         </div>
       </div>

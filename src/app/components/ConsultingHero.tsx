@@ -19,6 +19,7 @@ export default function ConsultingHero() {
           lineWidth={4}
           startPosition={0.5}
           color={"#fcca0b"}
+          speedFactor={1}
         />
         {/* chatgpt placeholder text for cards */}
         <div className="services-grid">

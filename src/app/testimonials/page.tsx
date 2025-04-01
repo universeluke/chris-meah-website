@@ -1,21 +1,22 @@
-// import styles from "./consulting.module.css";
 "use client";
 
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import Menu from "../components/Menu";
 import LLMNavbar from "../components/LLMNavbar";
 import PageHeaders from "../components/PageHeaders";
-import ConsultingHero from "../components/ConsultingHero";
 import GridLines from "../components/GridLines";
-import ScrollLine from "../components/ScrollLine";
 
-export default function Consulting() {
+export default function Testimonials() {
   const menuItems = useMemo(
     () => [
       { id: "section1", label: "one bit" },
       { id: "section2", label: "two bits" },
       { id: "section3", label: "three bits" },
       { id: "section4", label: "four bits" },
+      { id: "section5", label: "five bits" },
+      { id: "section6", label: "six bits" },
+      { id: "section7", label: "seven bits" },
+      { id: "section8", label: "eight bits" },
     ],
     []
   );
@@ -24,21 +25,9 @@ export default function Consulting() {
     <>
       <GridLines />
       <section id="section1">
-        <PageHeaders
-          mainTitle="Consulting"
-          subTitle="Bespoke, practical, tailored"
-        />
+        <PageHeaders mainTitle="Testimonials" subTitle="unfinished" />
       </section>
-      <section id="section2">
-        <ConsultingHero />
-      </section>
-      <ScrollLine
-        maxLength={200}
-        lineWidth={4}
-        startPosition={0.5}
-        color={"#fcca0b"}
-        speedFactor={1}
-      />
+
       <LLMNavbar menuItems={menuItems} />
       <Menu />
     </>
