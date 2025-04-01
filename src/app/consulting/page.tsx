@@ -32,7 +32,12 @@ export default function Consulting() {
       <section id="section2">
         <ConsultingHero />
       </section>
-      <ScrollLine />
+      <ScrollLine
+        maxLength={200}
+        lineWidth={4}
+        startPosition={0.5}
+        color={"#fcca0b"}
+      />
       <LLMNavbar menuItems={menuItems} />
       <Menu />
     </>
