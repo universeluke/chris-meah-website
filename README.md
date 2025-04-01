@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Competition entry for Chris' website challenge
 
-## Getting Started
+This is my entry of an AI-themed, future-oriented website for Chris' competition. I drew various mockups on Photoshop before starting, and I knew that I wanted to use the nodes of an LLM as a recurring theme throughout.
 
-First, run the development server:
+Starting with the navbar on the right, I was forced to learn a lot about SVG paths and CSS in general in order to make some of the effects that I wanted, and used Claude as a learning tool for some of the maths and logic. I'm not 100% happy with the homepage yet, and would like to tidy up some of the parallax and make the general flow of scrolling through the site a little easier.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+There's a few areas that I'm really happy with, like the implementation of the 3D network model, and the burger menu at the bottom for navigation to other pages. I also really like the AI chatbot introduction, as that was actually my initial idea that lead into using the theme of LLMs throughout the whole site. I couldn't quite find the right font, and so have gone with Helvetica for now, but that will likely change in the future.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I have ideas for a highly visually engaging "wall of testimonials", and would also like to include more about Chris in the About Me section, as it's currently very bare-bones. I'd like in general to make the site more personal, and include more embedded videos and images throughout (instead of cards with text).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Thanks for taking the time to check out my submission!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(also: have a play with the 3D model, it's clickable and draggable and I span it around a lot whilst trying to come up with ideas. I mentioned in my submission that a seperate idea would be to have the entire site as a 3D model of a neural network, that is navigated through to access different areas, and I'd love to learn more about threejs and React Three Fiber in general!)
